@@ -1,0 +1,21 @@
+{
+  "name": "coinbase-trader",
+  "version": "1.0.0",
+  "description": "Automatically trades crypto",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pierreminiggio/coinbase-trader.git"
+  },
+  "author": "Pierre Miniggio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pierreminiggio/coinbase-trader/issues"
+  },
+  "homepage": "https://github.com/pierreminiggio/coinbase-trader#readme"
+}
