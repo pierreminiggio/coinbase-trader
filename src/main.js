@@ -15,7 +15,9 @@ export default function (key, secret) {
             if (! err) {
                 const newBTCValue = rates.data.rates.BTC
                 if (lastBTCValue !== null) {
-                    isBTCAscending = lastBTCValue <= newBTCValue
+                    isBTCAscending = isBTCAscending ?
+                        (lastBTCValue <= newBTCValue) :
+                        (lastBTCValue < newBTCValue)
                     console.log(isBTCAscending ? 'ascending' : 'descending')
                 }
                 lastBTCValue = newBTCValue
