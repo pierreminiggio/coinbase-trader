@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/pierreminiggio/coinbase-trader#readme",
   "dependencies": {
-    "coinbase": "^2.0.8"
+    "coinbase": "^2.0.8",
+    "dotenv": "^8.2.0"
   }
 }
