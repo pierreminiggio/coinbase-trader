@@ -7,9 +7,20 @@ import coinbase from 'coinbase'
 export default function (key, secret) {
     const client = new coinbase.Client({apiKey: key, apiSecret: secret})
 
-    client.getAccounts({}, function(err, accounts) {
-        accounts.forEach(function(acct) {
-            console.log('my bal: ' + acct.balance.amount + ' for ' + acct.name);
-        });
-    });
+    let isBTCAscending = null
+    let lastBTCValue = null
+
+    setInterval(() => {
+        client.getExchangeRates({}, (err, rates) => {
+            if (! err) {
+                const newBTCValue = rates.data.rates.BTC
+                if (lastBTCValue !== null) {
+                    isBTCAscending = lastBTCValue <= newBTCValue
+                    console.log(isBTCAscending ? 'ascending' : 'descending')
+                }
+                lastBTCValue = newBTCValue
+                console.log(newBTCValue)
+            }
+        })
+    }, 31000)
 }
