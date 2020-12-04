@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/pierreminiggio/coinbase-trader/issues"
   },
-  "homepage": "https://github.com/pierreminiggio/coinbase-trader#readme"
+  "homepage": "https://github.com/pierreminiggio/coinbase-trader#readme",
+  "dependencies": {
+    "coinbase": "^2.0.8"
+  }
 }
