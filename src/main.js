@@ -39,10 +39,20 @@ export default function (key, secret) {
                             if (isBTCAscending) {
                                 console.log('HODL !')
                             } else {
-                                if (true /* check if higher than bought price */) {
+                                if (true /* check if higher than last bought price */) {
                                     console.log('Sell !')
+                                    holdingInWallet = false
                                 } else {
                                     console.log('HODL !')
+                                }
+                            }
+                        } else {
+                            if (isBTCAscending) {
+                                if (false /* check if higher than last bought price */) {
+                                    console.log('FLY ABOVE MY HEAD !')
+                                } else {
+                                    console.log('Buy !')
+                                    holdingInWallet = true
                                 }
                             }
                         }
