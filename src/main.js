@@ -53,7 +53,7 @@ export default function (key, secret) {
                             }
                         } else {
                             if (isBTCAscending) {
-                                if (lastSoldPrice || newBTCValue > (lastSoldPrice * margin)) {
+                                if (lastSoldPrice && newBTCValue > (lastSoldPrice * margin)) {
                                     console.log('FLY ABOVE MY HEAD !')
                                 } else {
                                     console.log('Buy !')
