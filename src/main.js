@@ -22,6 +22,10 @@ export default function (key, secret) {
 
     let isBTCAscending = null
     let lastBTCValue = null
+    let lastBoughtPrice = null
+    let lastSoldPrice = null
+
+    const margin = 1.02
 
     const startTrading = () => {
         console.log('Start trading !')
@@ -39,20 +43,22 @@ export default function (key, secret) {
                             if (isBTCAscending) {
                                 console.log('HODL !')
                             } else {
-                                if (true /* check if higher than last bought price */) {
+                                if (! lastBoughtPrice || (lastBoughtPrice * margin) < newBTCValue) {
                                     console.log('Sell !')
                                     holdingInWallet = false
+                                    lastSoldPrice = newBTCValue
                                 } else {
                                     console.log('HODL !')
                                 }
                             }
                         } else {
                             if (isBTCAscending) {
-                                if (false /* check if higher than last bought price */) {
+                                if (lastSoldPrice || newBTCValue > (lastSoldPrice * margin)) {
                                     console.log('FLY ABOVE MY HEAD !')
                                 } else {
                                     console.log('Buy !')
                                     holdingInWallet = true
+                                    lastBoughtPrice = newBTCValue
                                 }
                             }
                         }
