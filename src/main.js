@@ -60,6 +60,8 @@ export default function (key, secret) {
                                     holdingInWallet = true
                                     lastBoughtPrice = newBTCValue
                                 }
+                            } else {
+                                console.log('YES I\'M HERE !')
                             }
                         }
                     }
